@@ -38,8 +38,11 @@ Integrated blips and prompts for easy interaction.
 💰 Payment Logic
 
 Server-side validation via RSG Core (Player.Functions.RemoveMoney('cash')).
+
 Prevents simultaneous use — only one player per bath at a time.
+
 Notifies players if:
+
 - insufficient funds (notify_not_enough_money)
 - bath is already occupied (notify_occupied).
 
