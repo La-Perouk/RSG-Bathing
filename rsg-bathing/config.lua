@@ -3,7 +3,7 @@ lib.locale()
 Config = {}
 
 -- Discord Logs
-Config.DiscordWebhook = 'https://discord.com/api/webhooks/1492625454580891772/z0nuju3CUMTDqjWnXjmjZl_Jb3CGm7cGi3IyeFH-qxBmz6RxPjl-8o9388lBsUfFx8nY'
+Config.DiscordWebhook = ''
 Config.SessionTimeout = 600000  -- ms 
 Config.NormalBathPrice = 8
 Config.DeluxeBathPrice = 15
