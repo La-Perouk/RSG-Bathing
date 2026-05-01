@@ -4,25 +4,34 @@ Added Discord Logs for the RSG Bathing main script and more bathing locations.
 
 🛁 rsg-bathing
 
-Interactive bathing system for RedM servers using RSG Core.
-
-Immersive bathhouses where players can pay for a normal or deluxe bath.
-Includes realistic animations, NPC attendants, and localized prompts for Saint Denis, Valentine, and Annesburg.
+- Interactive bathing system for RedM servers using RSG Core.
+- Immersive bathhouses where players can pay for a normal or deluxe bath.
+- Includes realistic animations, NPC attendants, and localized prompts for Saint Denis, Valentine, and Annesburg.
 
 🛠️ Dependencies
 
-rsg-core 🤠
-ox_lib ⚙️ (for prompts and notifications)
-oxmysql 🗄️ (for character data)
+- rsg-core 🤠
+- ox_lib ⚙️ (for prompts and notifications)
+- oxmysql 🗄️ (for character data)
 
 ✨ Features
 
 🧭 Bathing System
 
-Available in Saint Denis, Valentine, Annesburg, Strawberry, Blackwater, Van Horn, Rhodes and Tumbleweed.
+Available in the following cities: 
+1. Saint Denis, 
+2. Valentine, 
+3. Annesburg, 
+4. Strawberry, 
+5. Blackwater, 
+6. Van Horn, 
+7. Rhodes, 
+8. Tumbleweed.
+
 Choose between:
-Normal Bath → base price 
-Deluxe Bath → assisted version 
+- Normal Bath → base price 
+- Deluxe Bath → assisted version 
+
 Dynamic NPC attendants spawn at each bathhouse.
 Integrated blips and prompts for easy interaction.
 
