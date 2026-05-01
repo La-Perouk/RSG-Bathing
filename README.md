@@ -14,6 +14,7 @@ Added Discord Logs for the RSG Bathing main script and more bathing locations.
 - ox_lib ⚙️ (for prompts and notifications)
 - oxmysql 🗄️ (for character data)
 
+
 ✨ Features
 
 🧭 Bathing System
