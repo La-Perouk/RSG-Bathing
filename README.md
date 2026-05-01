@@ -51,5 +51,8 @@ Uses RDR2 native bathing animations:
 - script@mini_game@bathing@BATHING_INTRO_OUTRO_ANNESBURG
 Includes door closing, ragdoll positioning, and fade effects.
 
-Credits 
+💎 Credits
+
+Original RSG adaptation by Rexshack Gaming
+License: GPL‑3.0
 RedShack - https://github.com/Rexshack-RedM/rsg-core
