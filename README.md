@@ -59,4 +59,4 @@ Includes door closing, ragdoll positioning, and fade effects.
 
 Original RSG adaptation by Rexshack Gaming
 
-RexShack - https://github.com/Rexshack-RedM/rsg-core
+RexShack - https://github.com/Rexshack-RedM
