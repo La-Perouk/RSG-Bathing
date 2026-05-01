@@ -1,6 +1,6 @@
 <img width="2948" height="497" alt="image" src="https://github.com/user-attachments/assets/f4ef4273-587c-4b44-8036-54c50cdef91f" />
 
-Added Discord Logs for the RSG Bathing main script. 
+Added Discord Logs for the RSG Bathing main script and more bathing locations. 
 
 🛁 rsg-bathing
 Interactive bathing system for RedM servers using RSG Core.
