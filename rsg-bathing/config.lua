@@ -3,10 +3,10 @@ lib.locale()
 Config = {}
 
 -- Discord Logs
-Config.DiscordWebhook = ''
+Config.DiscordWebhook = 'https://discord.com/api/webhooks/1492625454580891772/z0nuju3CUMTDqjWnXjmjZl_Jb3CGm7cGi3IyeFH-qxBmz6RxPjl-8o9388lBsUfFx8nY'
 Config.SessionTimeout = 600000  -- ms 
-Config.NormalBathPrice = 8
-Config.DeluxeBathPrice = 15
+Config.NormalBathPrice = 5
+Config.DeluxeBathPrice = 10
 
 Config.BathingZones = {
     ["SaintDenis"] = {
@@ -73,7 +73,6 @@ Config.BathingZones = {
         door = 1682160693
     }
 }
-
 
 Config.BathingModes = {
     {

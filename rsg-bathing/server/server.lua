@@ -172,13 +172,34 @@ RegisterServerEvent('rsg-bathing:server:setBathAsFree')
 AddEventHandler('rsg-bathing:server:setBathAsFree', function(town)
     if BathingSessions[town] == source then
         BathingSessions[town] = nil
+        TriggerClientEvent('rsg-bathing:client:ToggleInvincibility', source, false)
     end
 end)
 
 AddEventHandler('playerDropped', function()
+    local src = source
     for town, player in pairs(BathingSessions) do
-        if player == source then
+        if player == src then
             BathingSessions[town] = nil
         end
+    end
+end)
+
+RegisterServerEvent('rsg-bathing:server:undressPlayer')
+AddEventHandler('rsg-bathing:server:undressPlayer', function()
+    exports['rsg-wardrobe']:RemovePlayerClothing(source)
+end)
+
+RegisterServerEvent('rsg-bathing:server:dressPlayer')
+AddEventHandler('rsg-bathing:server:dressPlayer', function()
+    exports['rsg-wardrobe']:DressPlayer(source)
+end)
+
+AddEventHandler('onResourceStop', function(resource)
+    if resource == GetCurrentResourceName() then
+        for town, player in pairs(BathingSessions) do
+            TriggerClientEvent('rsg-bathing:client:ToggleInvincibility', player, false)
+        end
+        BathingSessions = {}
     end
 end)

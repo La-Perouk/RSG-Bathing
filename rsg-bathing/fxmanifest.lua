@@ -3,7 +3,7 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 game 'rdr3'
 
 description 'rsg-bathing'
-version '1.1.4'
+version '1.1.5'
 
 shared_scripts {
     '@ox_lib/init.lua',
@@ -21,13 +21,14 @@ server_scripts {
 }
 
 files {
-    'locales/*.json'
+    'locales/*.json',
+    'locales/*.lua'
 }
 
 dependencies {
     'rsg-core',
     'rsg-appearance',
-  --  'rsg-wardrobe'
+    'rsg-wardrobe'
 }
 
 lua54 'yes'
