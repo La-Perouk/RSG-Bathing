@@ -2,6 +2,9 @@
 
 Added Discord Logs for the RSG Bathing main script and more bathing locations. 
 
+Also, fixed the problem where the player would be dirty and the dirt will only go away at the end of the bath. 
+Now, when the player is selecting the option to 'Scrub', then the dirt goes away in real time. 
+
 🛁 rsg-bathing
 
 - Interactive bathing system for RedM servers using RSG Core.
