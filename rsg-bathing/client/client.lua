@@ -245,7 +245,7 @@ ExitBathing = function()
     end
 
     DressCharacter()
-    
+
     -- Secondary cleaning check right after exiting the bath setup
     ClearPedEnvDirt(cache.ped)
     ClearPedBloodDamage(cache.ped)
@@ -393,9 +393,9 @@ DressCharacter = function()
     local maxStamina = Citizen.InvokeNative(0xCB42AFE2B613EE55, cache.ped, Citizen.ResultAsFloat())
     local currentStamina = Citizen.InvokeNative(0x775A1CA7893AA8B5, cache.ped, Citizen.ResultAsFloat()) / maxStamina * 100
     TriggerServerEvent('rsg-bathing:server:dressPlayer')
-    
-    Wait(1500) 
-    
+
+    Wait(1500)
+
     -- Cleaning logic from your working script  
     ClearPedEnvDirt(cache.ped)
     ClearPedBloodDamage(cache.ped)
@@ -409,7 +409,6 @@ DressCharacter = function()
     SetEntityHealth(cache.ped, currentHealth)
     Citizen.InvokeNative(0xC3D4B754C0E86B9E, cache.ped, currentStamina)
 end
-
 
 SetCurrentCleaniest = function(rag, value)
     SetTaskMoveNetworkSignalFloat(cache.ped, "Cleanliness_Right_Arm", value);

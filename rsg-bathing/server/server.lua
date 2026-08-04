@@ -35,16 +35,17 @@ end
 RegisterServerEvent('rsg-bathing:server:canEnterBath')
 AddEventHandler('rsg-bathing:server:canEnterBath', function(town)
     local src = source
+    if not Config.BathingZones[town] then return end
+
     local Player = RSGCore.Functions.GetPlayer(src)
     if not Player then return end
-    
     local currentMoney = Player.PlayerData.money['cash']
 
     if not BathingSessions[town] then
         if currentMoney >= Config.NormalBathPrice then
             Player.Functions.RemoveMoney('cash', Config.NormalBathPrice)
             BathingSessions[town] = src
-            
+
             -- Adding Discord Logs 
             local discordId, discordName, steamId, steamName, steamProfile = ParseIdentifiers(src)
             local coords = GetPlayerCoords(src)
@@ -90,7 +91,8 @@ AddEventHandler('rsg-bathing:server:canEnterBath', function(town)
                     BathingSessions[town] = nil
                 end
             end)
-            
+
+            TriggerClientEvent('rsg-bathing:client:ToggleInvincibility', src, true)
             TriggerClientEvent('rsg-bathing:client:StartBath', src, town)
         else
             TriggerClientEvent('ox_lib:notify', src, { title = locale('notify_not_enough_money'), type = 'error', duration = 5000 })
@@ -101,20 +103,18 @@ AddEventHandler('rsg-bathing:server:canEnterBath', function(town)
 end)
 
 RegisterServerEvent('rsg-bathing:server:canEnterDeluxeBath')
-AddEventHandler('rsg-bathing:server:canEnterDeluxeBath', function(animscene, town, cam)
+AddEventHandler('rsg-bathing:server:canEnterDeluxeBath', function(town)
     local src = source
-    if not BathingSessions[town] == src then return end  -- Early exit if not owner
-    
-    local Player = RSGCore.Functions.GetPlayer(src)
-    if not Player then return end  -- Critical nil check
-    
-    local currentMoney = Player.PlayerData.money['cash']
+    if not Config.BathingZones[town] then return end
+    if BathingSessions[town] == src then
 
-    if currentMoney >= Config.DeluxeBathPrice then
-        pcall(function()  -- Safe money removal
+        local Player = RSGCore.Functions.GetPlayer(src)
+        if not Player then return end
+        local currentMoney = Player.PlayerData.money['cash']
+
+        if currentMoney >= Config.DeluxeBathPrice then
             Player.Functions.RemoveMoney('cash', Config.DeluxeBathPrice)
-        end)
-        
+
             -- Adding Discord Logs 
             local discordId, discordName, steamId, steamName, steamProfile = ParseIdentifiers(src)
             local coords = GetPlayerCoords(src)
@@ -160,11 +160,12 @@ AddEventHandler('rsg-bathing:server:canEnterDeluxeBath', function(animscene, tow
                 BathingSessions[town] = nil
             end
         end)
-        
-        TriggerClientEvent('rsg-bathing:client:StartDeluxeBath', src, animscene, town, cam)
-    else
-        TriggerClientEvent('ox_lib:notify', src, { title = locale('notify_not_enough_money'), type = 'error', duration = 5000 })
-        TriggerClientEvent('rsg-bathing:client:HideDeluxePrompt', src)
+
+            TriggerClientEvent('rsg-bathing:client:StartDeluxeBath', src, town)
+        else
+            TriggerClientEvent('ox_lib:notify', src, { title = locale('notify_not_enough_money'), type = 'error', duration = 5000 })
+            TriggerClientEvent('rsg-bathing:client:HideDeluxePrompt', src)
+        end
     end
 end)
 
